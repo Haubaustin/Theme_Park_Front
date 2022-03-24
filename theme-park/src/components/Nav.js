@@ -6,8 +6,12 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
     return (
         <div>
+            <span className='title'>
+        Parks
+        </span>
+        
         <Link to="/">Home</Link>
-        <Link to="/about">about</Link>
+        <Link to="/about">About</Link>
         </div>
     )
 }

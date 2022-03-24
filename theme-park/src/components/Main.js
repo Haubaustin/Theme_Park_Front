@@ -9,6 +9,7 @@ import BudgetCard from './BudgetCard'
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
+    const [deals, setDealsResults] = useState([])
     const [searchValue, setSearchValue] = useState()
     const [budgetResults, setBudgetResults] = useState([])
     const [searching, setSearching] = useState(false)
@@ -31,12 +32,25 @@ const Main = () => {
         setSearchQuery(e.target.value)
     }
 
+    useEffect(() => {
+        const getDealResults = () => {
+            setDealsResults(dummy)
+        }
+        getDealResults()
+        console.log(getDealResults)
+    },[])
+    
     const handleValue = (e) => {
         setSearchValue(parseInt(e.target.value))
     }
 
     return (
         <div>
+            <section className="dDisplay">
+            {deals.map((res) => (
+        <Deals key={res.id} name={res.parkName} />
+            ))}
+            </section>
         <SearchBar 
             onSubmit1={getSearchResults}
             onSubmit2={getBudgetResults}
@@ -54,7 +68,6 @@ const Main = () => {
                 <BudgetCard key={result.id} name={result.parkName} price={result.parkPrice} />
             ))}
         </section>
-        <Deals />
         </div>
     )
 }
