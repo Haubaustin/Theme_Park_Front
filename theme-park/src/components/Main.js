@@ -7,7 +7,7 @@ import ParkCard from "./ParkCard";
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
-
+    const [deals, setDealsResults] = useState([])
 
     const getSearchResults = async (e) => {
         e.preventDefault()
@@ -19,8 +19,21 @@ const Main = () => {
         setSearchQuery(e.target.value)
     }
 
+    useEffect(() => {
+        const getDealResults = () => {
+            setDealsResults(dummy)
+        }
+        getDealResults()
+        console.log(getDealResults)
+    },[])
+    
     return (
         <div>
+            <section className="dDisplay">
+            {deals.map((res) => (
+        <Deals key={res.id} name={res.parkName} />
+            ))}
+            </section>
         <SearchBar 
             onSubmit={getSearchResults}
             onChange={handleChange}
@@ -31,7 +44,6 @@ const Main = () => {
                 <ParkCard key={result.id} name={result.parkName} price={result.parkPrice} />
             ))}
         </section>
-        <Deals />
         </div>
     )
 }

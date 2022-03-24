@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Deals = () => {
+const Deals = (props) => {
     return (
+        <div className='Deals'>
         <h1>Hot deals!</h1>
+        <h5>{props.name}</h5>
+
+        </div>
     )
 }
 
