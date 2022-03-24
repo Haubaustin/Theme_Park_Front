@@ -5,6 +5,7 @@ import dummy from '../data/dummy'
 import target from '../data/target'
 import ParkCard from "./ParkCard";
 import BudgetCard from './BudgetCard'
+import { Link } from "react-router-dom";
 
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -62,7 +63,9 @@ const Main = () => {
         <h2>Search Results</h2>
         <section>
             {searching && searchResults.map((result) => (
+                <Link to={`parks/${result.id}`}>
                 <ParkCard key={result.id} name={result.parkName} price={result.parkPrice} />
+                </Link>
             ))}
             {!searching && budgetResults.map((result) => (
                 <BudgetCard key={result.id} name={result.parkName} price={result.parkPrice} />
