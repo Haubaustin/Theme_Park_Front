@@ -37,7 +37,6 @@ const Main = () => {
             setDealsResults(dummy)
         }
         getDealResults()
-        console.log(getDealResults)
     },[])
     
     const handleValue = (e) => {
@@ -46,11 +45,11 @@ const Main = () => {
 
     return (
         <div>
-            <section className="dDisplay">
+            <div className="dDisplay">
             {deals.map((res) => (
         <Deals key={res.id} name={res.parkName} />
             ))}
-            </section>
+            </div>
         <SearchBar 
             onSubmit1={getSearchResults}
             onSubmit2={getBudgetResults}
@@ -60,7 +59,7 @@ const Main = () => {
             value2={searchValue}
         />
         <h2>Search Results</h2>
-        <section>
+        <section className="searchResults">
             {searching && searchResults.map((result) => (
                 <ParkCard key={result.id} name={result.parkName} price={result.parkPrice} />
             ))}
