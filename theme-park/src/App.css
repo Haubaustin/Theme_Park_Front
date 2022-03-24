@@ -1,18 +1,19 @@
 .App {
   text-align: center;
 }
-.linkedin {
+a.linkedin {
   color: black;
+  margin: 0 10px 0 10px;
+  transition: transform 300ms;
 }
+
+  a > svg:hover {
+  transform: translateY(-2px);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .header {
@@ -29,4 +30,3 @@
 .App-link {
   color: #61dafb;
 }
-
