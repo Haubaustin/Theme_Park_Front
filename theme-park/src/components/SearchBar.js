@@ -1,8 +1,18 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     return (
-        <h1>Searching...</h1>
+        <form onSubmit={props.onSubmit}>
+            <input
+                type='text'
+                name='search'
+                placeholder="Search Parks"
+                onChange={props.onChange}
+            />
+            <button type="submit">
+                Search
+            </button>
+        </form>
     )
 }
 
