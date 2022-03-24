@@ -16,11 +16,13 @@ function App() {
   return (
     <div className="App">
     <Header className ="Header"/>
+    <div className='AppMain'>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='about' element={<About />} />
         <Route path='/parks/:id' element={<ParkDetails parks={parks} />}/>
       </Routes> 
+      </div>
     <Footer />
     </div>
   );
